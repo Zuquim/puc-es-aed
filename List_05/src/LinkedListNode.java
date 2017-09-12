@@ -14,28 +14,28 @@ public class LinkedListNode {
 	}
 
 	public boolean insert(LinkedListNode node, int n) {
-		boolean success = false;
+		boolean done = false;
 		if (this.getNext() == null || n == 1) {
 			LinkedListNode aux = getNext();
 			this.setNext(node);
 			node.setNext(aux);
-			success = true;
+			done = true;
 		} else {
 			n--;
 			next.insert(node, n);
 		}
-		return success;
+		return done;
 	}
 
 	public boolean remove(int n) {
-		boolean success = false;
+		boolean done = false;
 		if (n == 1 || this.getNext().getNext() == null) {
 			setNext(getNext().getNext());
 		} else {
 			n--;
 			getNext().remove(n);
 		}
-		return success;
+		return done;
 	}
 
 	public void makeEmptyList() {
@@ -65,6 +65,7 @@ public class LinkedListNode {
 			return getNext().getNext().searchId(id);
 		}
 	}
+
 
 	public int getId() {
 		return id;
