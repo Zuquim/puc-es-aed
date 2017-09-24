@@ -1,0 +1,8 @@
+Q02.
+	a) 1
+	b) 3
+	c) Na passagem de parâmetros por valor, a função pode receber um valor que
+	 pode ser uma expressão. Essa será calculada no momento da passagem, e 
+	 então a função receberá o resultado. Na passagem de parâmetros por
+	 referência, a função receberá o endereço do valor, podendo assim executar
+	 as 'tarefas' com acesso direto ao valor armazenado na memória.
