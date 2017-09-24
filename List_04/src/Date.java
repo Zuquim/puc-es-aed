@@ -15,8 +15,17 @@ public class Date {
 
 	public Date(int year, int month, int day) {
 		this.year = year;
-		this.month = month;
-		this.day = day;
+        if(month > 0 && month <= 12) {
+    		this.month = month;
+            if(day > 0 && day <= daysInMonth(month))
+            	this.day = day;
+            else
+                System.out.println("\n\tInvalid day number inserted." +
+                        "\n\tIt must be an integer from 1 to " +
+                        daysInMonth(month) + "!\n");
+        } else
+            System.out.println("\n\tInvalid month number inserted." +
+                    "\n\tIt must be an integer from 1 to 12!\n");
 	}
 
 	public int getYear() {
