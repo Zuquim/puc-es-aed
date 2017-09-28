@@ -5,37 +5,32 @@ public class LinkedListNode {
 	private LinkedListNode next;
 
 	public LinkedListNode() {
-		this.id = 0;
-		this.next = null;
+		setId(0);
+		setNext(null);
 	}
 
 	public boolean emptyList() {
 		return (this.getNext() == null);
 	}
 
-	public boolean insert(LinkedListNode node, int n) {
-		boolean done = false;
+	public void insert(LinkedListNode node, int n) {
 		if (this.getNext() == null || n == 1) {
 			LinkedListNode aux = getNext();
 			this.setNext(node);
 			node.setNext(aux);
-			done = true;
 		} else {
-			n--;
-			next.insert(node, n);
+			next.insert(node, n - 1);
 		}
-		return done;
+		return;
 	}
 
-	public boolean remove(int n) {
-		boolean done = false;
+	public void remove(int n) {
 		if (n == 1 || this.getNext().getNext() == null) {
-			setNext(getNext().getNext());
+			this.setNext(getNext().getNext());
 		} else {
-			n--;
-			getNext().remove(n);
+			this.getNext().remove(n - 1);
 		}
-		return done;
+		return;
 	}
 
 	public void makeEmptyList() {
@@ -44,7 +39,7 @@ public class LinkedListNode {
 
 	public void write() {
 		if (getNext() != null) {
-			System.out.println(getNext().getId());
+			System.out.print(getNext().getId());
 			getNext().write();
 		}
 	}
@@ -66,9 +61,8 @@ public class LinkedListNode {
 		}
 	}
 
-
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(int id) {
@@ -76,7 +70,7 @@ public class LinkedListNode {
 	}
 
 	public LinkedListNode getNext() {
-		return next;
+		return this.next;
 	}
 
 	public void setNext(LinkedListNode next) {
