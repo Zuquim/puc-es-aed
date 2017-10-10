@@ -25,7 +25,7 @@ public class LinkedListNode {
 	}
 
 	public void remove(int n) {
-		if (n == 1 || this.getNext().getNext() == null) {
+		if (n == 1 || this.getNext().getNext() == null) {                      
 			this.setNext(getNext().getNext());
 		} else {
 			this.getNext().remove(n - 1);
